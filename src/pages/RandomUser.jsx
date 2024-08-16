@@ -41,7 +41,7 @@ const RandomUser = () => {
     }, [])
 
     return (
-        <main className='min-h-[80vh] flex items-center justify-center bg-black'>
+        <main className='min-h-[80vh]'>
 
             <div className="container py-5    flex items-center justify-center w-full mx-auto">
 
