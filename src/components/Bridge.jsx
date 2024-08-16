@@ -1,19 +1,21 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RandomUser from "../pages/RandomUser";
+import Header from "./Header";
 
-export default function Bridge(){
+export default function Bridge() {
     return <>
-    
+
         <BrowserRouter>
-        
-        <Routes>
-            <Route path="/" element={<RandomUser />} />
-            <Route path="/random-jokes" element={<RandomUser />} />
-            <Route path="/cats-listing" element={<RandomUser />} />
-        </Routes>
-        
-        
+
+            <Header />
+            <Routes>
+                <Route path="/" element={<RandomUser />} />
+                <Route path="/random-jokes" element={<RandomUser />} />
+                <Route path="/cats-listing" element={<RandomUser />} />
+            </Routes>
+
+
         </BrowserRouter>
-    
+
     </>
 }
