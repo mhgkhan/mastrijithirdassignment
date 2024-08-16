@@ -64,7 +64,7 @@ const Catlisting = () => {
                                         <p className='mt-1 text-sm'>{element?.description.substring(0, 100)}</p>
                                     </div>
 
-                                    <div className="mt-1 w-full flex items-center gap-7 text-sm">
+                                    <div className=" w-full flex items-center gap-7 text-sm">
                                         <p className='font-bold'>Origin</p>
                                         <p>{element?.origin}</p>
                                     </div>
