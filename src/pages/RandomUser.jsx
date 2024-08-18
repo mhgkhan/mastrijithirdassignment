@@ -14,14 +14,14 @@ const RandomUser = () => {
         try {
             setLoading(true)
 
-            const fetchingUser = await (await fetch(`https://api.freeapi.app/api/v1/public/randomusers/user/random`)).json();
-            setLoading(false)
+            const fetchingUser = await fetch(`https://api.freeapi.app/api/v1/public/randomusers/user/random`);
 
-            console.log(fetchingUser)
+            const response = await fetchingUser.json()
+            console.log(response)
 
 
-            if (fetchingUser.success) {
-                setUserData(fetchingUser.data)
+            if (response.success) {
+                setUserData(response.data)
 
             }
             else {
@@ -30,8 +30,10 @@ const RandomUser = () => {
 
 
         } catch (error) {
-            setLoading(false)
             console.log(error)
+        }
+        finally{
+            setLoading(false)
         }
     }
 

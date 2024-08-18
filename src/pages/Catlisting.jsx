@@ -14,18 +14,20 @@ const Catlisting = () => {
         try {
             // https://api.freeapi.app/api/v1/public/cats?page=1&limit=4
             setLoading(true)
-            const reqAndres = await (await fetch(`https://api.freeapi.app/api/v1/public/cats?page=${counter}&limit=4`)).json()
+            const reqAndres = await fetch(`https://api.freeapi.app/api/v1/public/cats?page=${counter}&limit=4`)
 
-            setLoading(false)
-            if (reqAndres.success) {
-                setCatsData(reqAndres.data.data)
+            const response = await reqAndres.json()
+
+            if (response.success) {
+                setCatsData(response.data.data)
             }
-            console.log(reqAndres.data.data)
+            console.log(response.data.data)
 
 
         } catch (error) {
-            setLoading(false)
             console.log(error)
+        } finally {
+            setLoading(false)
         }
     }
 
